@@ -30,6 +30,7 @@
 *.exe
 *.out
 *.app
+!*.config
 /build/*/
 /build/*.vcxproj*
 /build/*.txt

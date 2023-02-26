@@ -153,6 +153,17 @@ set_target_properties(libCoreWebView PROPERTIES
 					  #COMPILE_FLAGS_RELEASE "${GLOBAL_COMPILER_OPTIONS} /MT  -D${PROJECT_LIB_MACRO}"
 )
 
+# Import WebView2 nuget package
+#set_property(TARGET libCoreWebView
+#    PROPERTY VS_PACKAGE_REFERENCES "Microsoft.Web.WebView2_1.0.1462.37"
+#)
+
+# Import WebView2 nuget package
+#add_custom_command(TARGET libCoreWebView
+#    PRE_BUILD
+#    COMMAND nuget install Microsoft.Web.WebView2
+#)
+
 #############################################################################
 #  ________                              .__          .____    ._____.      #
 #  \______ \ ___.__. ____ _____    _____ |__| ____    |    |   |__\_ |__    #
@@ -196,6 +207,11 @@ target_link_libraries(dllCoreWebView
 # Set project dependencies
 #add_dependencies(dllCoreWebView
 #	libCoreWebView
+#)
+
+# Import WebView2 nuget package
+#set_property(TARGET dllCoreWebView
+#    PROPERTY VS_PACKAGE_REFERENCES "Microsoft.Web.WebView2_1.0.1462.37"
 #)
 
 ##############################################################
